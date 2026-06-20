@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { SlidersHorizontal, Download, ChevronDown, Columns, Globe, BrainCircuit, Loader2, ArrowRight } from "lucide-react";
+import { SlidersHorizontal, Download, ChevronDown, Columns, Globe, BrainCircuit, Loader2 } from "lucide-react";
 import { FiftyTwoWeekVisualizer } from "../components/FiftyTwoWeekVisualizer";
 import { FilterModal } from "../components/FilterModal";
 import { AuthCheckoutModal } from "../components/AuthCheckoutModal";

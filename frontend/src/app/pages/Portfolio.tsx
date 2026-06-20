@@ -324,9 +324,8 @@ export function Portfolio() {
   const totalPnL = totalValue - totalCost;
   const totalPnLPct = totalCost > 0 ? ((totalValue / totalCost) - 1) * 100 : 0;
 
-  const sectorData = positions.map((p, i) => ({ name: p.ticker, value: Math.round(p.totalCost) }));
+  const sectorData = positions.map((p) => ({ name: p.ticker, value: Math.round(p.totalCost) }));
 
-  const recentBuySells = transactions.filter((t) => t.type !== "TOPUP").slice(0, 12);
   const historyChartData = (() => {
     const byDay: Record<string, { date: string; value: number }> = {};
     let running = 0;
@@ -339,10 +338,6 @@ export function Portfolio() {
     });
     return Object.values(byDay).slice(-10);
   })();
-
-  const pnlStyle = (val: number) => ({
-    color: val >= 0 ? "var(--trust-blue)" : "var(--trust-bronze)",
-  });
 
   const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number }>; label?: string }) => {
     if (!active || !payload?.length) return null;

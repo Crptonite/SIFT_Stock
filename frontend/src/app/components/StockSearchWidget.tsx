@@ -144,7 +144,7 @@ export function StockSearchWidget() {
               <Skeleton variant="text" width="40%" height={32} />
               <Skeleton variant="text" width="25%" height={24} sx={{ mb: 1 }} />
               <Grid container spacing={1.5}>
-                {[1,2,3,4,5,6].map(i => <Grid item xs={4} key={i}><Skeleton variant="rectangular" height={44} sx={{ borderRadius: 1.5 }} /></Grid>)}
+                {[1,2,3,4,5,6].map(i => <Grid size={4} key={i}><Skeleton variant="rectangular" height={44} sx={{ borderRadius: 1.5 }} /></Grid>)}
               </Grid>
             </Box>
           )}
@@ -183,12 +183,12 @@ export function StockSearchWidget() {
               </Box>
 
               <Grid container spacing={1.5}>
-                <Grid item xs={4}><StatBox label="Open"       value={`${fmt(quote.o)}`} /></Grid>
-                <Grid item xs={4}><StatBox label="High"       value={`${fmt(quote.h)}`} /></Grid>
-                <Grid item xs={4}><StatBox label="Low"        value={`${fmt(quote.l)}`} /></Grid>
-                <Grid item xs={4}><StatBox label="Prev Close" value={`${fmt(quote.pc)}`} /></Grid>
-                <Grid item xs={4}><StatBox label="Change"     value={`${isUp ? "+" : ""}${fmt(quote.d)}`} /></Grid>
-                <Grid item xs={4}><StatBox label="Change %"   value={`${isUp ? "+" : ""}${fmt(quote.dp)}%`} /></Grid>
+                <Grid size={4}><StatBox label="Open"       value={`${fmt(quote.o)}`} /></Grid>
+                <Grid size={4}><StatBox label="High"       value={`${fmt(quote.h)}`} /></Grid>
+                <Grid size={4}><StatBox label="Low"        value={`${fmt(quote.l)}`} /></Grid>
+                <Grid size={4}><StatBox label="Prev Close" value={`${fmt(quote.pc)}`} /></Grid>
+                <Grid size={4}><StatBox label="Change"     value={`${isUp ? "+" : ""}${fmt(quote.d)}`} /></Grid>
+                <Grid size={4}><StatBox label="Change %"   value={`${isUp ? "+" : ""}${fmt(quote.dp)}%`} /></Grid>
               </Grid>
             </>
           )}

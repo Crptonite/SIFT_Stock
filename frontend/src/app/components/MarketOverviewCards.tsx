@@ -150,7 +150,7 @@ export function MarketOverviewCards() {
         {/* Cards grid */}
         <Grid container spacing={1.5}>
           {WATCHLIST.map(({ symbol, label, tag }) => (
-            <Grid item xs={6} sm={3} md={3} key={symbol}>
+            <Grid size={{ xs: 6, sm: 3 }} key={symbol}>
               <MarketCard
                 symbol={symbol}
                 label={label}
