@@ -1,0 +1,13 @@
+{
+  "name": "sift-stock",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build":         "cd frontend && pnpm run build",
+    "dev":           "cd frontend && pnpm dev",
+    "dev:backend":   "cd backend && pnpm dev",
+    "build:backend": "cd backend && echo \"No build step for Node backend\"",
+    "sync":          "cd backend && pnpm sync",
+    "sync:dry":      "cd backend && pnpm sync:dry"
+  }
+}

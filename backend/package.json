@@ -1,0 +1,29 @@
+{
+  "name": "sift-stock-backend",
+  "version": "1.0.0",
+  "description": "SIFT Stock backend — Node/Express + NeonDB + Stripe + Neon Auth",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node -r dotenv/config index.js",
+    "start": "node index.js",
+    "build": "echo \"No build step needed for Node backend\"",
+    "sync": "node -r dotenv/config scripts/sync-stripe.js",
+    "sync:dry": "node -r dotenv/config scripts/sync-stripe.js --dry-run",
+    "sync:week": "node -r dotenv/config scripts/sync-stripe.js --days=7"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "stripe": "^17.7.0",
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
