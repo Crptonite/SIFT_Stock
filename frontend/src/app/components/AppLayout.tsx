@@ -345,9 +345,10 @@ export function AppLayout({ children }: { children?: React.ReactNode }) {
         </div>
       )}
 
-      {/* ── MAIN CONTENT ─────────────────────────────────────────────────── */}
-      <main className="flex-1 overflow-auto">
-        {children ? children : <Outlet />}
+            {/* ── MAIN CONTENT ────────────────────────────────────── */}
+      <main className="flex-1 overflow-y-auto">
+        <Outlet />
+        {children}
       </main>
 
       <AuthCheckoutModal
