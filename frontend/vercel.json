@@ -2,7 +2,7 @@
   "framework": "vite",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "npm run build",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run build",
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
