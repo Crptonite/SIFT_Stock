@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
     rollupOptions: {
-      // Add 'next/navigation' to external modules so Vite ignores it
-      external: ['next/navigation']
+      // Ignore both Next.js specific imports during Vite compilation
+      external: ['next/navigation', 'next/link']
     },
     outDir: 'dist',
     sourcemap: false,
