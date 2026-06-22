@@ -1,15 +1,13 @@
-# Dependencies — NEVER commit these
+# Dependencies
 node_modules/
 .pnpm-store/
 
-# Build output
-dist/
-dist-ssr/
-build/
+# Build
 .next/
 out/
+dist/
 
-# Environment — never commit secrets
+# Env
 .env
 .env.local
 .env.*.local
@@ -18,14 +16,8 @@ out/
 # Vercel
 .vercel/
 
-# Heavy binary/model files
-*.exe
-*.bin
-*.pt
-*.onnx
-*.pkl
-*.tar.gz
-*.zip
+# Prisma
+prisma/generated/
 
 # OS
 .DS_Store
@@ -34,17 +26,17 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
-*.suo
-*.sw?
 
 # Logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
 
-# Misc
-*.local
-coverage/
-/sift_stock_ai/
-/tests/
+# Old structure (keep files, skip build artifacts)
+frontend/node_modules/
+frontend/.vercel/
+frontend/dist/
+backend/node_modules/
+backend/.vercel/
+
+# Other
+sift_stock_ai/
+tests/

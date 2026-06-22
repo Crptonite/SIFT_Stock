@@ -1,13 +1,47 @@
 {
   "name": "sift-stock",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build":         "cd frontend && pnpm run build",
-    "dev":           "cd frontend && pnpm dev",
-    "dev:backend":   "cd backend && pnpm dev",
-    "build:backend": "cd backend && echo \"No build step for Node backend\"",
-    "sync":          "cd backend && pnpm sync",
-    "sync:dry":      "cd backend && pnpm sync:dry"
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:generate": "prisma generate"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.5",
+    "@mui/material": "^7.3.5",
+    "@neondatabase/serverless": "^0.10.4",
+    "@prisma/client": "^5.22.0",
+    "@prisma/adapter-neon": "^5.22.0",
+    "@stackframe/stack": "^2.7.17",
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^4.5.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.487.0",
+    "next": "^15.3.3",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.2",
+    "stripe": "^17.7.0",
+    "tailwind-merge": "^3.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^20",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "prisma": "^5.22.0",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^5"
   }
 }

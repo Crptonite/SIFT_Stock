@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL")
+}
+
+enum Plan {
+  FREE
+  PRO
+  ENTERPRISE
+}
+
+enum TxType {
+  BUY
+  SELL
+  TOPUP
+}
+
+enum ComplaintStatus {
+  PENDING
+  INVESTIGATING
+  RESOLVED
+}
+
+model UserProfile {
+  userId        String   @id @map("user_id")
+  walletBalance Decimal  @default(0) @map("wallet_balance") @db.Decimal(15, 2)
+  currentPlan   Plan     @default(FREE) @map("current_plan")
+  isAdmin       Boolean  @default(false) @map("is_admin")
+  email         String?  @unique
+  name          String?
+  image         String?
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  transactions   StockTransaction[]
+  monitoringKeys MonitoringKey[]
+  complaints     UserComplaint[]
+
+  @@map("user_profiles")
+}
+
+model StockTransaction {
+  id            Int      @id @default(autoincrement())
+  userId        String   @map("user_id")
+  ticker        String   @default("WALLET")
+  type          TxType
+  shares        Decimal? @db.Decimal(15, 6)
+  pricePerShare Decimal? @map("price_per_share") @db.Decimal(15, 2)
+  totalAmount   Decimal  @map("total_amount") @db.Decimal(15, 2)
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  user UserProfile @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("stock_transactions")
+}
+
+model MonitoringKey {
+  id         Int    @id @default(autoincrement())
+  userId     String @map("user_id")
+  apiKeyHash String @map("api_key_hash")
+
+  user UserProfile @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@map("monitoring_keys")
+}
+
+model UserComplaint {
+  id          Int             @id @default(autoincrement())
+  userId      String          @map("user_id")
+  title       String
+  description String
+  status      ComplaintStatus @default(PENDING)
+  createdAt   DateTime        @default(now()) @map("created_at")
+
+  user UserProfile @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@map("user_complaints")
+}
+
+model ProcessedWebhook {
+  id          String   @id
+  processedAt DateTime @default(now()) @map("processed_at")
+
+  @@map("processed_webhooks")
+}
