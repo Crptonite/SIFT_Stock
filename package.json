@@ -16,9 +16,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
-    "@neondatabase/serverless": "^0.10.4",
     "@prisma/client": "^5.22.0",
-    "@prisma/adapter-neon": "^5.22.0",
     "@stackframe/stack": "^2.7.17",
     "bcryptjs": "^2.4.3",
     "chart.js": "^4.5.1",
@@ -32,8 +30,7 @@
     "react-dom": "^18.3.1",
     "recharts": "^2.15.2",
     "stripe": "^17.7.0",
-    "tailwind-merge": "^3.2.0",
-    "prisma": "^5.22.0"
+    "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.12",
@@ -42,6 +39,7 @@
     "@types/node": "^20",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
+    "prisma": "^5.22.0",
     "tailwindcss": "^4.1.12",
     "typescript": "^5"
   }

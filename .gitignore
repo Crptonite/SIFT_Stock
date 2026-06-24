@@ -40,3 +40,6 @@ backend/.vercel/
 # Other
 sift_stock_ai/
 tests/
+
+.vercel
+.next/
