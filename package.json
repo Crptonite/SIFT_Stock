@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
-    "db:push": "prisma db push",
-    "db:studio": "prisma studio",
-    "db:generate": "prisma generate",
+    "db:push": "prisma db push --schema=../prisma/schema.prisma",
+    "db:studio": "prisma studio --schema=../prisma/schema.prisma",
+    "db:generate": "prisma generate --schema=../prisma/schema.prisma",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -30,7 +30,8 @@
     "react-dom": "^18.3.1",
     "recharts": "^2.15.2",
     "stripe": "^17.7.0",
-    "tailwind-merge": "^3.2.0"
+    "tailwind-merge": "^3.2.0",
+    "prisma": "^5.22.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.12",
@@ -39,7 +40,6 @@
     "@types/node": "^20",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
-    "prisma": "^5.22.0",
     "tailwindcss": "^4.1.12",
     "typescript": "^5"
   }
